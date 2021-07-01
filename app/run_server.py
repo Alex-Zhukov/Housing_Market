@@ -15,7 +15,7 @@ def load_model(model_path):
         model = dill.load(f)
 
 
-modelpath = "./models/lightgbm.dill"
+modelpath = "/app/app/models/lightgbm.dill"
 load_model(modelpath)
 
 
@@ -37,4 +37,4 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0', port=8180)
