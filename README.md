@@ -1,23 +1,18 @@
 # Housing_Market
-Итоговый проект (пример) курса "Машинное обучение в бизнесе"
+Итоговый проект курса "Машинное обучение в бизнесе"
 
 Стек:
 
-ML: sklearn, pandas, numpy
+ML: sklearn, pandas, numpy, lightgbm
 API: flask
-Данные: с kaggle - https://www.kaggle.com/shivamb/real-or-fake-fake-jobposting-prediction
+Данные: с kaggle - https://www.kaggle.com/c/sberbank-russian-housing-market
 
-Задача: предсказать по описанию вакансии является ли она фейком или нет (поле fraudulent). Бинарная классификация
+Задача: предсказать стоимость жилья
 
-Используемые признаки:
+Используемые признаки находятся в файле data_dictionary
 
-- description (text)
-- company_profile (text)
-- benefits (text)
 
-Преобразования признаков: tfidf
-
-Модель: logreg
+Модель: lightgbm
 
 ### Клонируем репозиторий и создаем образ
 ```
@@ -33,4 +28,5 @@ $ docker build -t alex-zhukov/housing_market .
 $ docker run -d -p 8180:8180 -v <your_local_path_to_pretrained_models>:/app/app/models alex-zhukov/housing_market 
 ```
 
-### Переходим на localhost:8181
+#### Данные для тестов находятся в папке for test
+#### Обученная модель в папке app/models
